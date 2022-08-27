@@ -52,9 +52,11 @@ function submitEmployeeInfo() {
         // HANDLE TOTAL SALARY CALCULATIONS
         totalSalaries += employee.salary;
         console.log(totalSalaries);
+        monthlyCosts = Math.ceil(totalSalaries / 12);
+        console.log(monthlyCosts)
 
         // APPEND TOTAL SALARY TO THE DOM
-        $('#totalSalaryOutput').text(`Total Employee Salaries ${totalSalaries}`);
+        $('#totalMonthlyOutput').text(`Total Monthly Costs: $${monthlyCosts}`);
 
 
 
@@ -68,11 +70,6 @@ function submitEmployeeInfo() {
     el.val('');
 }
 
-// function calculateCosts() {
-//     // take in  employee salary info
-//     // add new salary info as things are submitted
-//     // calculate a TOTAL salary
-//     // display total Salary on the DOM
-
+// function deleteEmployeeInfo(){
 
 // }
