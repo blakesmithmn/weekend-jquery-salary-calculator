@@ -55,6 +55,13 @@ function submitEmployeeInfo() {
         monthlyCosts = Math.ceil(totalSalaries / 12);
         console.log(monthlyCosts)
 
+        // CAN"T GO ABOVE 20,000
+
+        if (monthlyCosts > 20000) {
+            console.log('Too Much');
+            $('.monthlyCost').css("background-color", "red");
+        }
+
         // APPEND TOTAL SALARY TO THE DOM
         $('#totalMonthlyOutput').text(`Total Monthly Costs: $${monthlyCosts}`);
 
