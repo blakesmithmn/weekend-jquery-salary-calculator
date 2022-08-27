@@ -1,7 +1,8 @@
 $(document).ready(readyNow)
 
 function readyNow() {
-    $('button').on('click', submitEmployeeInfo);
+    $('#submitButton').on('click', submitEmployeeInfo);
+    // $(document).on('click', 'tr', deleteEmployeeInfo);
 
 }
 
@@ -15,10 +16,11 @@ function readyNow() {
 /// make a function that interacts with the delete button
 /// use this button to delete an employee from the table
 
-let employees = [];
+
 
 function submitEmployeeInfo() {
     // currently linked properly
+    let employees = [];
     let singleEmployee = {
         firstName: $('#firstNameInput').val(),
         lastName: $('#lastNameInput').val(),
@@ -26,7 +28,22 @@ function submitEmployeeInfo() {
         jobTitle: $('#jobTitleInput').val(),
         salary: Number($('#salaryInput').val())
     }
-    console.log(singleEmployee);
 
+    employees.push(singleEmployee);
+
+    for (let employee of employees) {
+        $('.employeeTableBody').append(`
+            <tr>
+                <td> ${employee.firstName} </td>
+                <td> ${employee.lastName} </td>
+                <td> ${employee.id} </td>
+                <td> ${employee.jobTitle} </td>
+                <td> ${employee.salary} </td>
+            </tr>
+            `);
+        console.log(employees);
+
+    }
 }
+
 
