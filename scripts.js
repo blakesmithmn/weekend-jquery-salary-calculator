@@ -2,6 +2,8 @@ $(document).ready(readyNow)
 
 function readyNow() {
     $('#submitButton').on('click', submitEmployeeInfo);
+    // $('#submitButton').on('click', calculateCosts);
+
     // $(document).on('click', 'tr', deleteEmployeeInfo);
 
 }
@@ -17,10 +19,13 @@ function readyNow() {
 /// use this button to delete an employee from the table
 
 
+let totalSalaries = 0;
 
 function submitEmployeeInfo() {
     // currently linked properly
+
     let employees = [];
+    // EMPLOYEE OBJECT TO STORE VALUES FROM DOM INPUTS
     let singleEmployee = {
         firstName: $('#firstNameInput').val(),
         lastName: $('#lastNameInput').val(),
@@ -28,9 +33,10 @@ function submitEmployeeInfo() {
         jobTitle: $('#jobTitleInput').val(),
         salary: Number($('#salaryInput').val())
     }
-
+    // ADD INPUT OBJECT TO AN ACCESSIBLE ARRAY STORAGE
     employees.push(singleEmployee);
 
+    // FOR EACH EMPLOYEE - APPEND TO DOM
     for (let employee of employees) {
         $('.employeeTableBody').append(`
             <tr>
@@ -43,7 +49,30 @@ function submitEmployeeInfo() {
             `);
         console.log(employees);
 
+        // HANDLE TOTAL SALARY CALCULATIONS
+        totalSalaries += employee.salary;
+        console.log(totalSalaries);
+
+        // APPEND TOTAL SALARY TO THE DOM
+        $('#totalSalaryOutput').text(`Total Employee Salaries ${totalSalaries}`);
+
+
+
+
+        // call the function to show total costs (on button click)
+        // calculateCosts();
+
     }
+    // RESET INPUTS FOR NEXT ENTRY 
+    let el = $(':input');
+    el.val('');
 }
 
+// function calculateCosts() {
+//     // take in  employee salary info
+//     // add new salary info as things are submitted
+//     // calculate a TOTAL salary
+//     // display total Salary on the DOM
 
+
+// }
