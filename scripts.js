@@ -77,5 +77,7 @@ function submitEmployeeInfo() {
 }
 
 function deleteEmployeeInfo() {
-    console.log('deleted');
+    // select the button clicked using JQUERY
+    // clear the closest table row
+    $(this).closest('tr').empty();
 }
