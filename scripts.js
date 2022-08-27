@@ -2,9 +2,7 @@ $(document).ready(readyNow)
 
 function readyNow() {
     $('#submitButton').on('click', submitEmployeeInfo);
-    $(':button').on('click', 'tr', deleteEmployeeInfo);
-
-    // $(document).on('click', 'tr', deleteEmployeeInfo);
+    $(document).on('click', '.deleteButton', deleteEmployeeInfo);
 
 }
 
@@ -45,7 +43,7 @@ function submitEmployeeInfo() {
                 <td> ${employee.id} </td>
                 <td> ${employee.jobTitle} </td>
                 <td> ${employee.salary} </td>
-                <td> <button>Delete</button> </td>
+                <td> <button class="deleteButton">Delete</button> </td>
             </tr>
             `);
         console.log('List of Employees & Their info', employees);
