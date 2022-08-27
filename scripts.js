@@ -2,7 +2,7 @@ $(document).ready(readyNow)
 
 function readyNow() {
     $('#submitButton').on('click', submitEmployeeInfo);
-    // $('#submitButton').on('click', calculateCosts);
+    $(':button').on('click', 'tr', deleteEmployeeInfo);
 
     // $(document).on('click', 'tr', deleteEmployeeInfo);
 
@@ -45,20 +45,21 @@ function submitEmployeeInfo() {
                 <td> ${employee.id} </td>
                 <td> ${employee.jobTitle} </td>
                 <td> ${employee.salary} </td>
+                <td> <button>Delete</button> </td>
             </tr>
             `);
-        console.log(employees);
+        console.log('List of Employees & Their info', employees);
 
         // HANDLE TOTAL SALARY CALCULATIONS
         totalSalaries += employee.salary;
-        console.log(totalSalaries);
+        console.log('Total Employee Salaries', totalSalaries);
         monthlyCosts = Math.ceil(totalSalaries / 12);
-        console.log(monthlyCosts)
+        console.log('Total Monthly Costs:', monthlyCosts)
 
         // CAN"T GO ABOVE 20,000
 
         if (monthlyCosts > 20000) {
-            console.log('Too Much');
+            console.log('Budget Reached');
             $('.monthlyCost').css("background-color", "red");
         }
 
@@ -77,6 +78,6 @@ function submitEmployeeInfo() {
     el.val('');
 }
 
-// function deleteEmployeeInfo(){
-
-// }
+function deleteEmployeeInfo() {
+    console.log('deleted');
+}
