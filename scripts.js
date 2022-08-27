@@ -16,8 +16,9 @@ function readyNow() {
 /// make a function that interacts with the delete button
 /// use this button to delete an employee from the table
 
-
+/// global variables to manipulate later
 let totalSalaries = 0;
+let monthlyCosts = 0;
 
 function submitEmployeeInfo() {
     // currently linked properly
@@ -79,5 +80,12 @@ function submitEmployeeInfo() {
 function deleteEmployeeInfo() {
     // select the button clicked using JQUERY
     // clear the closest table row
+
+    // let currentRow = $(this).closest("tr");
+    // let deletedCost = currentRow.last("td").val();
+    // console.log(deletedCost);
+    // totalSalaries -= deletedCost;
+    // totalSalaries / 12;
+    // console.log(totalSalaries);
     $(this).closest('tr').empty();
 }
