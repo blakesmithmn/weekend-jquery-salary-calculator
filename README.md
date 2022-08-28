@@ -1,5 +1,4 @@
 
-(View Raw will give you the markdown that you can copy to your repos!)
 
 ![REPO SIZE](https://img.shields.io/github/repo-size/blakesmithmn/weekend-jquery-salary-calculator?style=flat-square)
 ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/blakesmithmn/weekend-jquery-salary-calculator?style=flat-square)
