@@ -26,13 +26,14 @@ footer {
     padding: 5px;
     font-size: 25px;
     height: 25px;
+    margin: 5px;
 }
 
 #submitButton {
     display: flex;
     flex-direction: row;
     justify-content: right;
-    border-radius: 5px;
+    
 
 }
 

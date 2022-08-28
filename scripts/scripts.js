@@ -43,7 +43,9 @@ function submitEmployeeInfo() {
                 <td> ${employee.lastName} </td>
                 <td> ${employee.id} </td>
                 <td> ${employee.jobTitle} </td>
-                <td> ${employee.salary} </td>
+                <td> 
+                <span class="employeeSalaryOutput"> ${employee.salary} </span>
+                </td>
                 <td> <button class="deleteButton">Delete</button> </td>
             </tr>
             `);
@@ -87,5 +89,7 @@ function deleteEmployeeInfo() {
     // totalSalaries -= deletedCost;
     // totalSalaries / 12;
     // console.log(totalSalaries);
+    console.log($(this).siblings('td').data());
     $(this).closest('tr').empty();
 }
+
