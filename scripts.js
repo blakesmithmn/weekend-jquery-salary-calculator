@@ -58,8 +58,8 @@ function submitEmployeeInfo() {
         // CAN"T GO ABOVE 20,000
 
         if (monthlyCosts > 20000) {
-            console.log('Budget Reached');
-            $('.monthlyCost').css("background-color", "red");
+            $('.monthlyCost').css("background-color", "#9F2042");
+            alert('Budget Reached');
         }
 
         // APPEND TOTAL SALARY TO THE DOM
